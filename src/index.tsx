@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// React18でのアプリケーションのルートを作成
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+  // React.StrictModeについて
+  // コンポーネントの表示で2回レンダリングされる
+  // 実際にアプリを本番環境でデプロイする際は、1回レンダリングされる
   <React.StrictMode>
     <App />
   </React.StrictMode>
