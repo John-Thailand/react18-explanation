@@ -12,9 +12,9 @@ root.render(
   // React.StrictModeについて
   // コンポーネントの表示で2回レンダリングされる
   // 実際にアプリを本番環境でデプロイする際は、1回レンダリングされる
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
