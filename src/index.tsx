@@ -5,7 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // suspense: true
+    }
+  }
+})
 
 // React18でのアプリケーションのルートを作成
 const root = ReactDOM.createRoot(

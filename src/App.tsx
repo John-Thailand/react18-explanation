@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { AutoBatchEventHandler } from './components/AutoBatchEventHandler';
@@ -17,7 +17,9 @@ function App() {
       <hr />
       <Transition />
       <hr />
-      <ReactQuery />
+      <Suspense fallback={<p>ローディング中</p>}>
+        <ReactQuery />
+      </Suspense>
     </div>
   );
 }
