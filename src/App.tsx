@@ -5,6 +5,7 @@ import { AutoBatchEventHandler } from './components/AutoBatchEventHandler';
 import { AutoBatchOther } from './components/AutoBatchOther';
 import { Transition } from './components/Transition';
 import { ReactQuery } from './components/ReactQuery';
+import { ErrorBoundary } from 'react-error-boundary';
 
 function App() {
   useEffect(() => {
@@ -17,9 +18,11 @@ function App() {
       <hr />
       <Transition />
       <hr />
-      <Suspense fallback={<p>ローディング中</p>}>
-        <ReactQuery />
-      </Suspense>
+      <ErrorBoundary fallback={<p>エラーです！</p>}>
+        <Suspense fallback={<p>ローディング中</p>}>
+          <ReactQuery />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }

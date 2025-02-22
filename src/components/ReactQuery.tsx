@@ -13,7 +13,7 @@ const fetchAlbums = async () => {
 }
 
 export const ReactQuery = () => {
-  const { isLoading, error, data } = useQuery<Album[]>({
+  const { data } = useQuery<Album[]>({
     queryKey: ['albums'],
     queryFn: fetchAlbums,
     // { suspense: true }
